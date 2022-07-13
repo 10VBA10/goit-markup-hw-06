@@ -27,7 +27,9 @@
   --items: 3;
   --indent: 30px;
 }
+
 /* Прописуємо box-sizing для всього документу*/
+
 html {
   box-sizing: border-box;
 }
@@ -36,8 +38,10 @@ html {
 *::after {
   box-sizing: border-box;
 }
+
 /* Задаємо основні кольори,шрифт та розмір для документа
  !!! - не впливає на button,addres */
+
 body {
   background-color: var(--primary-bg-color);
   color: var(--primary-text-color);
@@ -49,6 +53,7 @@ body {
 }
 
 /* Клас для скриття заголовків */
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -61,7 +66,9 @@ body {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
 /* Reset */
+
 h1,
 h2,
 h3,
@@ -88,27 +95,30 @@ address {
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
-
-  /* outline: 1px solid red; */
 }
+
 /* Онуляємо маркер списків в документі */
+
 .list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
+
 /* Онуляємо підкреслювання у в документі */
+
 .link {
   text-decoration: none;
 }
+
 /* ---HEADER--- */
-/* ширина контенту 1170px */
-/* ширина датеру справа-зліва 15px*2 =1200px */
 
 .page-header {
   border-bottom: 1px solid var(--header-line-cl);
 }
+
 /* logo */
+
 .logo {
   display: block;
   padding-top: 24px;
@@ -123,7 +133,9 @@ address {
 .logo-web {
   color: var(--accent-color);
 }
+
 /* site-nav */
+
 .main-nav {
   display: flex;
 }
@@ -170,7 +182,8 @@ address {
   background-color: currentColor;
 }
 
-/* contact */
+/* contacts */
+
 .contacts {
   display: flex;
   margin-left: auto;
@@ -185,7 +198,6 @@ address {
   margin-right: 10px;
   fill: currentColor;
 }
-
 .contacts .contacts-link {
   display: flex;
   padding-top: 32px;
@@ -207,7 +219,8 @@ address {
 
 /* ---MAIN---STUDIO */
 
-/* hero */
+/* HERO */
+
 .hero {
   padding-top: 200px;
   padding-bottom: 200px;
@@ -256,7 +269,6 @@ address {
 
   transition: background-color var(--transition-time-hover) var(--transition-cubic);
 }
-
 .hero-btn:hover,
 .hero-btn:focus {
   background-color: var(--hero-btn-hover-color);
@@ -273,31 +285,38 @@ address {
   background-color: var(--backdrop-modal-bg-cl);
 
   opacity: 1;
+  visibility: visible;
+	pointer-events: initial;
   transition: opacity var(--transition-time-hover);
 }
-
 .backdrop.is-hidden {
   opacity: 0;
-  pointer-events: none;
+	visibility: hidden;
+	pointer-events: none;
 }
-
 .backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) scale(0.3);
 }
-
 .modal {
+  
   position: absolute;
   top: 50%;
   left: 50%;
 
-  width: 528px;
-  height: 581px;
+  min-width: 528px;
+  
+  padding: 40px;
 
   background-color: var(--primary-bg-color);
   border-radius: 5px;
 
   transform: translate(-50%, -50%) scale(1);
   transition: transform var(--transition-time-hover);
+
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+border-radius: 4px;
+
+  
 }
 
 .btn-close {
@@ -315,8 +334,168 @@ address {
   background-color: var(--primary-bg-color);
   cursor: pointer;
 }
+.btn-close:hover, .btn-close:focus{
+  fill: var(--accent-color);
+  
+}
+.sign-up-forms {
+	font-size: 20px;
+	line-height: 1.15;
+	text-align: center;
+	letter-spacing: 0.03em;
+	color: var(--section-title-text)
+}
 
-/* strange */
+.sign-up-form-field {
+	display: flex;
+	flex-direction: column;
+}
+
+.form-wrapper {
+	margin-top: 12px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.sign-up-form-field {
+	position: relative;
+}
+.sign-up-form-field svg {
+	position: absolute;
+	left: 12px;
+	bottom: 11px;
+}
+
+.sign-up-form-field label {
+	letter-spacing: 0.01em;
+  
+}
+
+.sign-up-form-field input {
+	height: 40px;
+	margin: 0;
+	padding: 0 10px 0 42px;
+	border: 1px solid rgba(33, 33, 33, 0.2);
+	border-radius: 4px;
+	transition: border var(--transition-time-hover);
+}
+
+.sign-up-form-field textarea {
+	width: 448px;
+	height: 120px;
+	resize: none;
+	padding: 12px 16px;
+	border: 1px solid rgba(33, 33, 33, 0.2);
+	border-radius: 4px;
+	transition: border var(--transition-time-hover);
+}
+
+.sign-up-form-field textarea::placeholder {
+	letter-spacing: 0.01em;
+	color: rgba(117, 117, 117, 0.5);
+}
+
+.sign-up-form-field input:hover,
+.sign-up-form-field textarea:hover,
+.sign-up-form-field input:focus,
+.sign-up-form-field textarea:focus {
+	border: 1px solid var(--accent-color);
+	outline: transparent;
+}
+
+.sign-up-form-field input + svg {
+	transition: fill var(--transition-time-hover);
+}
+.sign-up-form-field input:hover + svg,
+.sign-up-form-field input:focus + svg {
+	fill: var(--accent-color);
+}
+
+.sign-up-form-checkbox {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+	margin-bottom: 30px;
+
+}
+
+.checkbox-label {
+	display: flex;
+	align-items: center;
+}
+
+.checkbox-agreement {
+	user-select: none;
+}
+
+.checkbox-terms {
+	color: var(--accent-color);
+	line-height: 1.71;
+	text-decoration-line: underline;
+}
+
+.checkbox-icon {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	width: 16px;
+	height: 15px;
+	margin-right: 7px;
+	outline: 2px solid var(--section-title-text);
+	outline-offset: -2px;
+	border-radius: 2px;
+  
+	transition: background-color var(--transition-time-hover), outline-color var(--transition-time-hover);
+}
+
+.checkbox-input:checked + .checkbox-icon {
+	background-color: var(--accent-color);
+	outline-color: var(--accent-color)
+
+}
+
+.form-btn-submit {
+  display: block;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  font-size: 16px;
+  padding: 10px 55px;
+  width: 200px;
+  border-radius: 4px;
+  border: transparent;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  background-color: var(--accent-color);
+  color: var(--secondary-text-color);
+  
+  
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  
+  transition: background-color var(--transition-time-hover) var(--transition-cubic), box-shadow var(--transition-time-hover) var(--transition-cubic);
+}
+.form-btn-submit:hover,
+.form-btn-submit:focus {
+  background-color: var(--hero-btn-hover-color);
+
+}
+
+
+
+
+
+
+
+
+
+/* STRANGE */
+
 .strange-list {
   display: flex;
   justify-content: center;
@@ -324,13 +503,11 @@ address {
 .strange-list .strange-list-item + .strange-list-item {
   margin-left: 30px;
 }
-
 .strange-icons {
   padding: 25px 100px;
   margin-bottom: 30px;
   background-color: var(--section-bg-color);
 }
-
 .strange-title,
 .strange-title-text {
   color: var(--section-title-text);
@@ -371,13 +548,6 @@ address {
   line-height: 1.17;
   text-align: center;
 }
-/* .work-list {
-  display: flex;
-  justify-content: center;
-}
-.work-list .work-item + .work-item {
-  margin-left: 30px;
-} */
 .work-item {
   position: relative;
 }
@@ -386,8 +556,7 @@ address {
   bottom: 0;
   height: 70px;
   width: 100%;
-  /* padding-top: 27px;
-  padding-bottom: 27px; */
+ 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -395,7 +564,6 @@ address {
   background-color: var(--work-img-bg-color);
 
   font-weight: 700;
-  /* font-size: 14px; */
   line-height: 1.14;
   text-align: center;
   text-transform: uppercase;
@@ -403,7 +571,7 @@ address {
   color: var(--primary-bg-color);
 }
 
-/* team */
+/* TEAM */
 
 .team {
   padding-bottom: 111px;
@@ -456,7 +624,6 @@ address {
   color: var(--primary-bg-color);
   background-color: var(--accent-color);
 }
-
 .team-item {
   background-color: var(--primary-bg-color);
   border-radius: 4px;
@@ -464,9 +631,6 @@ address {
   box-shadow: 0px 1px 1px 0px #00000024;
   box-shadow: 0px 1px 3px 0px #0000001f;
 }
-/* .team-list .team-item + .team-item {
-  margin-left: 30px;
-} */
 .team-sign {
   padding-top: 30px;
   padding-bottom: 30px;
@@ -491,7 +655,6 @@ address {
 .clients-logo {
   display: flex;
 }
-
 .clients-logo-icons:not(:last-child) {
   margin-right: 30px;
 }
@@ -520,6 +683,7 @@ address {
   color: var(--accent-color);
   border-color: var(--accent-color);
 }
+
 /* ---MAIN---PORTFOLIO */
 
 .projects-list-btn {
@@ -544,7 +708,6 @@ address {
   display: inline-block;
   border: none;
   padding: 6px 22px;
-  /* min-width: 128px; */
   border-radius: 4px;
 
   transition: color var(--transition-time-hover) var(--transition-cubic),
@@ -663,13 +826,6 @@ address {
   color: var(--primary-text-color);
 }
 
-/* .projects-title:hover,
-.projects-title:focus,
-.projects-title-text:hover,
-.projects-title-text:focus {
-  color: var(--accent-color);
-} */
-
 /* ---FOOTER---*/
 
 .footer {
@@ -688,6 +844,7 @@ address {
   margin-right: 70px;
 }
 /* logo */
+
 .logo-web-footer {
   display: block;
   margin-bottom: 20px;
@@ -698,6 +855,7 @@ address {
   font-size: 26px;
   line-height: 1.19;
 }
+
 /* contacts */
 
 .addres-map {
@@ -725,6 +883,9 @@ address {
   font-weight: 700;
   text-transform: uppercase;
 }
+
+/* social */
+
 .footer-social-list {
   display: flex;
   margin-right: 93px;
@@ -760,6 +921,8 @@ address {
   align-items: center;
   
 }
+/* subscription */
+
 .user-mail-subscription-input{
   width: 358px;
   height: 50px;
@@ -783,7 +946,7 @@ color: #ffffff;
   
   background-color: var(--accent-color);
   color: var(--secondary-text-color);
-  font-family: 'Roboto';
+  
   font-weight: 700;
   font-size: 16px;
   line-height: 1.88;

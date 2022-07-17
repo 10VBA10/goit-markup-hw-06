@@ -73,13 +73,13 @@
                 </svg>
               </button>
               <form class="sign-up-forms" name="register-form" autocomplete="on">
-                <strong>Залиште свої данні, ми вам перетелефонуємо</strong>
+                <strong class="sign-up-strong">Залиште свої данні, ми вам перетелефонуємо</strong>
                 <div class="form-wrapper">
                   <div class="sign-up-form-field">
                     <label for="user-name">
-                      <span>Ім'я</span>
+                      <span class="sign-up-label">Ім'я</span>
                     </label>
-                    <input type="text" name="user-name" id="user-name">
+                    <input type="text" name="user-name" id="user-name" required="required">
                     <svg width="18" height="18">
                       <use href="./images/icons.svg#person"></use>
                     </svg>
@@ -88,7 +88,7 @@
                     <label for="user-tel">
                       <span>Телефон</span>
                     </label>
-                    <input type="tel" name="user-tel" id="user-tel">
+                    <input type="tel" name="user-tel" id="user-tel" required="required">
                     <svg width="18" height="18">
                       <use href="./images/icons.svg#phone"></use>
                     </svg>
@@ -97,7 +97,7 @@
                     <label for="user-email">
                       <span>Пошта</span>
                     </label>
-                    <input type="email" name="user-email" id="user-email">
+                    <input type="email" name="user-email" id="user-email" required="required">
                     <svg width="18" height="18">
                       <use href="./images/icons.svg#email"></use>
                     </svg>
@@ -111,7 +111,7 @@
                 </div>
                 <div class="sign-up-form-checkbox">
                   <label class="checkbox-label">
-                    <input class="checkbox-input visually-hidden" type="checkbox" name="form-checkbox">
+                    <input class="checkbox-input visually-hidden" type="checkbox" name="form-checkbox" required="required">
                     <span class="checkbox-icon">
                       <svg width="16" height="15">
                         <use href="./images/icons.svg#check"></use>
@@ -529,24 +529,23 @@
           </ul>
         </div>
         <div class="footer-subscription">
-          <div>
             <p class="footer-text">
               Підпишиться на розсилку
             </p>
-            <div class="mail-subscription-wraper">
+            <!-- <div class="mail-subscription-wraper"> -->
+              <form class="footer-form-subsc">
               <label for="user-mail-subscription" E-mail*></label>
-              <input class="user-mail-subscription-input" type="email" id="user-mail-subscription" placeholder="E-mail"></input>
+              <input class="user-mail-subscription-input" type="email" id="user-mail-subscription" placeholder="E-mail" required="required"></input>
               <div class="svg-wrap">
-                <button type="button" class="footer-btn-subscription">Підписатися
+                <button type="submit" class="footer-btn-subscription">Підписатися
                   <svg class="icon-send" width="24" height="24">
                     <use href="./images/icons.svg#icon-send">
                     </use>
                   </svg>
               </div>
               </button>
-            </div>
-          </div>
-
+            </form>
+            <!-- </div> -->
         </div>
       </div>
     </footer>
